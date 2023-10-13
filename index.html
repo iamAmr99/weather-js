@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather app</title>
+    <link
+      rel="stylesheet"
+      href="assets/node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="vh-100">
+    <div
+      class="container text-light h-100 w-75 d-flex justify-content-between align-items-center"
+    >
+      <div
+        class="calender-section bg-dark h-75 p-1 d-flex align-items-center flex-column gap-3 shadow-lg"
+      >
+        <div
+          class="border border-2 border-light p-2 w-100 fs-3 shadow text-center"
+        >
+          <h4 id="todayDate">
+            <span id="weekDay">Mon</span>, <span id="todayDay">05</span>/<span
+              id="todayMonth"
+              >09</span
+            >/<span id="todayYear">2023</span>
+          </h4>
+        </div>
+        <div class="border border-2 h-75 w-75 shadow-lg"></div>
+      </div>
+      <div class="wheather-section h-75 d-flex flex-column gap-2">
+        <div class="bg-dark h-50 p-1">
+          <div class="d-flex gap-1 justify-content-around shadow">
+            <div class="d-flex align-items-center justify-content-around w-50">
+              <h6>Rainy day</h6>
+              <img src="assets/imgs/weather/weather icons/day/113.png"
+              title="weather"">
+              <h6 id="temp"><span>°C</span></h6>
+            </div>
+            <div class="">
+              <input
+                type="search"
+                id="search"
+                placeholder="add city"
+                class="w-100"
+              />
+            </div>
+          </div>
+          <div
+            class="w-75 d-flex align-items-center justify-content-center flex-column w-100 h-75 fs-1 shadow"
+          >
+            <h5>
+              city name:<span class="text-capitalize" id="cityName"> </span>
+            </h5>
+            <img
+              src="assets/imgs/weather/weather icons/night/356.png"
+              title="weather"
+            />
+          </div>
+        </div>
+        <div class="bg-dark h-50">next 3 days</div>
+      </div>
+      <div
+        class="clock-section bg-dark h-75 p-1 d-flex align-items-center flex-column gap-5 shadow-lg"
+      >
+        <div
+          class="border border-2 border-light p-2 w-100 fs-1 shadow text-center"
+        >
+          <span id="todayHour"> 10</span>:<span id="todayMinute">04</span
+          ><span id="timeOfDay"> pm</span>
+        </div>
+        <div class=" w-75 h-50 border rounded-circle my-2" id="clockContainer">
+          <div id="hour"></div>
+          <div id="minute"></div>
+          <div id="second"></div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="assets/node_modules/rainyday.js/dist/rainyday.min.js"></script>
+    <script src="assets/js/script.js" defer></script>
+  </body>
+</html>
