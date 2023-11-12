@@ -3,10 +3,10 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
-@media (min-width:992px) {
-  body{
-height: 100vh;
+@media (min-width: 992px) {
+  body {
+    height: 100vh;
   }
 }

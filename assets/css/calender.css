@@ -190,3 +190,11 @@ i.icon-datepicker-prev:before {
 i.icon-datepicker-next:before {
   content: "\e600";
 }
+@media screen {
+  .calender-section {
+    padding: 10px;
+  }
+  #demo {
+    padding:3rem ;
+  }
+}

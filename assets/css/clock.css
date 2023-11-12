@@ -43,7 +43,7 @@
 }
 @media screen {
   #clockContainer {
-    width: 100%;
+    width: 90%;
     height: 25rem ;
   }
   .clock-section {
