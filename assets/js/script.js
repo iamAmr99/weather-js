@@ -10,19 +10,31 @@ async function weather(cityname) {
 }
 
 
-function getWeather(data){
+function getWeather(data) {
     let weatherDesc = document.getElementById('weatherDesc').innerHTML = data.current.condition.text
     let weatherTemp = document.getElementById('weatherTemp').innerHTML = data.current.temp_c
     let cityName = document.getElementById('cityName').innerHTML = data.location.name
     let cityCountry = document.getElementById('cityCountry').innerHTML = data.location.country
     let cityContinent = document.getElementById('cityContinent').innerHTML = data.location.tz_id
     let weatherImg = document.getElementById('weatherImg').setAttribute('src', data.current.condition.icon)
-
+    let humidity = document.getElementById('humidity').innerHTML = data.current.humidity
+    let windSpeed = document.getElementById('windSpeed').innerHTML = data.current.wind_kph
+    let windDir = document.getElementById('windDir').innerHTML = data.current.wind_dir
+    let weatherTempCels = document.getElementById('weatherTempCels').innerHTML = data.current.temp_c
 }
 
-function getNextDayWeather(data){
-    let nextDays = document.getElementById('nextDays')
-    let forecast 
+function getNextDayWeather(data) {
+    let weatherNextDesc = document.getElementsByClassName('weatherNextDesc')
+    let maxTemp = document.getElementsByClassName('maxTemp')
+    let minTemp = document.getElementsByClassName('minTemp')
+    let nextImg = document.getElementsByClassName('nextImg')
+    let forecast = data.forecast.forecastday
+    for (let i = 0; i < 2; i++) {
+        maxTemp[i].innerHTML = forecast[i + 1].day.maxtemp_c
+        minTemp[i].innerHTML = forecast[i + 1].day.mintemp_c
+        weatherNextDesc[i].innerHTML = forecast[i+1].day.condition.text
+        nextImg[i].setAttribute("src",forecast[i+1].day.condition.icon)
+    }
 }
 
 function getDate() {
@@ -39,18 +51,19 @@ function getTime() {
 }
 
 
-async function weatherApp(city='cairo') {
+async function weatherApp(city = 'cairo') {
     let weatherData = await weather(city)
     if (!weatherData.error) {
         getWeather(weatherData)
         getNextDayWeather(weatherData)
     }
-    
+
     getDate()
     getTime()
 };
 weatherApp()
-searchBar.addEventListener('input',function(){
+
+searchBar.addEventListener('input', function () {
     weatherApp(searchBar.value);
 })
 

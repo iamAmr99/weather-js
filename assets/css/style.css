@@ -3,16 +3,10 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
-img {
-  width: 25%;
-}
-.clock-section {
-  width: 33%;
-}
-.wheather-section {
-  width: 30%;
-}
-.calender-section {
-  width: 33%;
+@media (min-width:992px) {
+  body{
+height: 100vh;
+  }
 }
